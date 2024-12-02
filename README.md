@@ -38,13 +38,15 @@ python manage.py runserver
 Access the app: Open http://127.0.0.1:8000/ in your browser.
 
 Folder Structure
-├── atm_banking         # Main Django app
-├── static_collected    # Collected static files
-├── web_project         # Django project settings
-├── db.sqlite3          # SQLite database
-├── manage.py           # Django management script
-├── .gitignore          # Ignored files
-└── requirements.txt    # Dependencies
+```
+      ├── atm_banking         # Main Django app
+      ├── static_collected    # Collected static files
+      ├── web_project         # Django project settings
+      ├── db.sqlite3          # SQLite database
+      ├── manage.py           # Django management script
+      ├── .gitignore          # Ignored files
+      └── requirements.txt    # Dependencies
+```
 Usage
 New Users: Sign up and log in to access your account.
 Existing Users: Log in to view account details or manage transactions.
