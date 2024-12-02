@@ -105,28 +105,35 @@ def withdraw(request):
     if request.method == 'POST':
         # Convert amount from float to Decimal
         amount = Decimal(request.POST.get('amount'))
+        entered_pin = request.POST.get('pin')  # Get the entered PIN
         account = BankAccount.objects.get(user=request.user)
-        
+
+        # Check if the entered PIN matches the user's PIN
+        if entered_pin != account.pin:
+            messages.error(request, 'Incorrect PIN. Please try again.')
+            return render(request, 'withdraw.html')
+
         # Check if the user has enough balance
         if amount > account.balance:
-            messages.error(request, 'Insufficient funds')
+            messages.error(request, 'Insufficient funds.')
             return render(request, 'withdraw.html')
-        
+
         # Subtract the amount from the account's balance
         account.balance -= amount
         account.save()
-        
+
         # Create a transaction record
         Transaction.objects.create(
             account=account,
             amount=amount,
-            transaction_type='WITHDRAW'
+            transaction_type='WITHDRAW',
+            description=f'Withdrawal of ${amount}'
         )
-        
+
         # Display success message
-        messages.success(request, f'Withdrew ${amount}')
+        messages.success(request, f'Successfully withdrew ${amount}.')
         return redirect('dashboard')
-    
+
     return render(request, 'withdraw.html')
 
 @login_required
@@ -134,25 +141,32 @@ def send_money(request):
     if request.method == 'POST':
         recipient_username = request.POST.get('recipient')
         amount = Decimal(request.POST.get('amount'))  # Convert to Decimal
-        
+        entered_pin = request.POST.get('pin')  # Get the entered PIN
+
         sender_account = BankAccount.objects.get(user=request.user)
-        
+
+        # Check if the entered PIN matches the sender's PIN
+        if entered_pin != sender_account.pin:
+            messages.error(request, 'Incorrect PIN. Please try again.')
+            return render(request, 'sendmoney.html')
+
         try:
             recipient = User.objects.get(username=recipient_username)
             recipient_account = BankAccount.objects.get(user=recipient)
-            
+
             if amount > sender_account.balance:
-                messages.error(request, 'Insufficient funds')
+                messages.error(request, 'Insufficient funds.')
                 return render(request, 'sendmoney.html')
-            
+
             # Atomic transaction to ensure consistency
             with transaction.atomic():
+                # Update balances
                 sender_account.balance -= amount  # Subtract amount from sender's account
                 recipient_account.balance += amount  # Add amount to recipient's account
-                
+
                 sender_account.save()
                 recipient_account.save()
-                
+
                 # Record transactions
                 Transaction.objects.create(
                     account=sender_account,
@@ -166,13 +180,13 @@ def send_money(request):
                     transaction_type='TRANSFER',
                     description=f'Received from {request.user.username}'
                 )
-            
-            messages.success(request, f'Transferred ${amount} to {recipient_username}')
+
+            messages.success(request, f'Transferred ${amount} to {recipient_username}.')
             return redirect('dashboard')
-        
+
         except (User.DoesNotExist, BankAccount.DoesNotExist):
-            messages.error(request, 'Recipient not found')
-    
+            messages.error(request, 'Recipient not found.')
+
     return render(request, 'sendmoney.html')
 
 @login_required
