@@ -132,9 +132,10 @@ We welcome contributions! If you want to improve the project, follow these steps
 
 Fork the repository to your own GitHub account.
 Clone your fork to your local machine:
-
+```
 git clone https://github.com/your-username/ATM_banking.git
 cd ATM_banking
+```
 Create a new branch for your feature:
 ```
 git checkout -b feature-name
@@ -152,6 +153,9 @@ Open a pull request to the main repository to propose your changes.
 
 
 ## Acknowledgements
+
 Django Framework: Django
+
 SQLite Database: SQLite
+
 GitHub: GitHub
