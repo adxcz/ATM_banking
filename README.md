@@ -19,7 +19,9 @@ The members/contributors for this project are so named:
 - [Folder Structure](#folder-structure)
 - [Contributing](#contributing)
 - [License](#license)
+- [Links](#Links)
 - [Acknoledgements](#Acknowledgements)
+
 
 ---https://github.com/adxcz/ATM_banking
 
@@ -150,6 +152,12 @@ Push your changes to your forked repository:
 git push origin feature-name
 ```
 Open a pull request to the main repository to propose your changes.
+
+## Links
+[Gantt Chart](https://cebuinstituteoftechnology-my.sharepoint.com/:x:/g/personal/neiladrian_bas_cit_edu/EZUPooZOATVJrrviavX2LR0BNo5yqEHJhvws-QAekix1tQ?e=RfA3eG&fbclid=IwZXh0bgNhZW0CMTAAAR3CJEBI7zPkSKEFNW7g2qdnmJy45ReLMmtUx-Talx_NZ2Kz98W1aERH-_o_aem_gq0tyMT9UBY0kqL3LSN0kA)
+
+
+
 
 
 ## Acknowledgements
