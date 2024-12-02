@@ -3,6 +3,7 @@
 Greetings! This repository is intended for the final project of the ATM Banking System group of CSIT327 section G5 of the Cebu Institute of Technology-University to be submitted to Mr. Joemari Amparo.
 
 The members/contributors for this project are so named:
+
 Nap Adriel B. Derecho
 Neil Bas
 ---
@@ -117,7 +118,9 @@ Send Money
 Change Pin
 ![Change Pin](images/Changepin.png)
 
-(Insert images of the application's user interface, such as login screens, dashboard, and transaction views.)
+Gantt Chart:
+
+
 
 Contributing
 We welcome contributions! If you want to improve the project, follow these steps:
@@ -141,8 +144,7 @@ Push your changes to your forked repository:
 git push origin feature-name
 ```
 Open a pull request to the main repository to propose your changes.
-License
-This project is licensed under the MIT License.
+
 
 ## Acknowledgements
 Django Framework: Django
