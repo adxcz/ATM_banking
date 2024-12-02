@@ -1,6 +1,6 @@
 # ATM Banking System
 
-Greetings! This repository is intended for the final project of the ATM Banking System group of CSIT327 section G5 of the Cebu Institute of Technology-University to be submitted to Mr. Joemari Amparo.
+Greetings! This repository is intended for the final project of the ATM Banking System group of CSIT327 section G7 of the Cebu Institute of Technology-University to be submitted to Mr. Joemari Amparo.
 
 The members/contributors for this project are so named:
 
@@ -95,7 +95,8 @@ Folder Structure
 ```
 Old ERD
 ![Old ERD](images/OldERD.png)
-ERD
+Updated ERD
+
 Relationships
 User and BankAccount: One-to-Many (A user can have multiple bank accounts).
 BankAccount and Transaction: One-to-Many (An account can have multiple transactions).
@@ -131,9 +132,10 @@ We welcome contributions! If you want to improve the project, follow these steps
 
 Fork the repository to your own GitHub account.
 Clone your fork to your local machine:
-
+```
 git clone https://github.com/your-username/ATM_banking.git
 cd ATM_banking
+```
 Create a new branch for your feature:
 ```
 git checkout -b feature-name
@@ -151,6 +153,9 @@ Open a pull request to the main repository to propose your changes.
 
 
 ## Acknowledgements
+
 Django Framework: Django
+
 SQLite Database: SQLite
+
 GitHub: GitHub
