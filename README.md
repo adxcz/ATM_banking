@@ -91,12 +91,31 @@ Folder Structure
 └── requirements.txt    # List of dependencies for the project
 ```
 ERD
-Add your Entity-Relationship Diagram (ERD) image or description here:
-
-(Insert the ERD diagram showing the relationships between users, transactions, and accounts.)
+Relationships
+User and BankAccount: One-to-Many (A user can have multiple bank accounts).
+BankAccount and Transaction: One-to-Many (An account can have multiple transactions).
+User and ContactSupport: One-to-Many (A user can submit multiple inquiries).
+![ERD Diagram](images/UpdatedERD.png)
 
 UI/UX
-Add your User Interface/User Experience (UI/UX) screenshots or descriptions here:
+Home
+![Home](images/Home.png)
+Login
+![Login](images/Login.png)
+Register
+![Register](images/Register.png)
+Dashboard
+![Dashboard](images/Dashboard.png)
+Deposit
+![Deposit](images/Deposit.png)
+Withdraw
+![Withdraw](images/Withdraw.png)
+Contact
+![Contact](images/Contact.png)
+Send Money
+![SendMoney](images/Sendmoney.png)
+Change Pin
+![Change Pin](images/Changepin.png)
 
 (Insert images of the application's user interface, such as login screens, dashboard, and transaction views.)
 
