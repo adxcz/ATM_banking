@@ -95,7 +95,8 @@ Folder Structure
 ```
 Old ERD
 ![Old ERD](images/OldERD.png)
-ERD
+Updated ERD
+
 Relationships
 User and BankAccount: One-to-Many (A user can have multiple bank accounts).
 BankAccount and Transaction: One-to-Many (An account can have multiple transactions).
