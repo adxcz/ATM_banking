@@ -21,22 +21,29 @@ A Django-based web application for managing banking operations, including user a
    cd atm_banking
    
 Set up a virtual environment:
+```
 python -m venv venv
+```
+
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 
 Install dependencies:
+```
 pip install -r requirements.txt
-
+```
 
 Run migrations:
+```
 python manage.py makemigrations
 python manage.py migrate
+```
 
 Start the development server:
+```
 python manage.py runserver
 Access the app: Open http://127.0.0.1:8000/ in your browser.
-
+```
 Folder Structure
 ```
       ├── atm_banking         # Main Django app
@@ -56,13 +63,17 @@ Fork the repository.
 
 
 Create a new branch:
+```
 git checkout -b feature-name
-
+```
 Commit your changes:
+```
 git commit -m "Add feature-name"
-
+```
 Push to your branch:
+```
 git push origin feature-name
+```
 Open a pull request.
 License
 This project is licensed under the MIT License.
