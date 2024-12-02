@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up - Banking App{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-box">
+        <h2>Sign Up</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" name="confirm_password" id="confirm-password" required placeholder="Confirm password">
+            </div>
+            <div class="input-group">
+                <label for="pin">PIN</label>
+                <input type="password" id="pin" name="pin" required placeholder="Set your PIN">
+                <label for="confirm-pin">Confirm PIN</label>
+                <input type="password" name="confirm_pin" id="confirm-pin" required placeholder="Confirm PIN">
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+            <p class="redirect-link">Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="contact-container">
+    <div class="contact-form-box">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to reach out!</p>
+        
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="message">Message:</label>
+                <textarea name="message" id="message" required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <div class="redirect-link">
+            <a href="{% url 'home' %}">Back to Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

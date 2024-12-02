@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to Our Bank{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="welcome-heading">Welcome to Our Bank</h2>
+    <p class="intro-text">
+        We offer a range of financial services tailored to meet your needs. Whether you're looking to open a new account, or manage your finances online, we are here to help!
+    </p>
+
+    <!-- Services Section -->
+    <div class="services">
+        <h3>Our Services</h3>
+        <ul>
+            <li>✔️ Personal Bank Accounts</li>
+            <li>✔️ Online Banking</li>
+            <li>✔️ 24/7 Customer Support</li>
+        </ul>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="cta">
+        <h3>Get Started Today!</h3>
+        <p>Ready to manage your finances with us? 
+           {% if not user.is_authenticated %}
+           Sign up now, or log in if you're already a customer.
+           {% endif %}
+        </p>
+        <div class="cta-buttons">
+            {% if not user.is_authenticated %}
+            <a href="{% url 'signup' %}" class="btn action-btn">Sign Up</a>
+            <a href="{% url 'login' %}" class="btn action-btn">Log In</a>
+            {% else %}
+            <a href="{% url 'dashboard' %}" class="btn action-btn">Go to Dashboard</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Contact Information Section -->
+    <div class="contact-info">
+        <h3>Contact Us</h3>
+        <p>Have any questions or need assistance? Feel free to reach out to us.</p>
+        <a href="{% url 'contact' %}" class="btn contact-btn">Contact Support</a>
+    </div>
+</div>
+{% endblock %}
