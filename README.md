@@ -93,6 +93,8 @@ Folder Structure
 ├── .gitignore          # Git ignore file for version control
 └── requirements.txt    # List of dependencies for the project
 ```
+Old ERD
+![Old ERD](images/OldERD.png)
 ERD
 Relationships
 User and BankAccount: One-to-Many (A user can have multiple bank accounts).
@@ -121,7 +123,7 @@ Change Pin
 ![Change Pin](images/Changepin.png)
 
 Gantt Chart:
-
+![Gantt Chart](images/GanttChart.png)
 
 
 Contributing
