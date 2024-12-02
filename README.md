@@ -13,6 +13,7 @@ A Django-based web application for managing banking operations, including user a
 - [Folder Structure](#folder-structure)
 - [Contributing](#contributing)
 - [License](#license)
+- [Acknoledgements](#Acknowledgements)
 
 ---
 
@@ -111,7 +112,7 @@ Open a pull request to the main repository to propose your changes.
 License
 This project is licensed under the MIT License.
 
-Acknowledgements
+##Acknowledgements
 Django Framework: Django
 SQLite Database: SQLite
 GitHub: GitHub
