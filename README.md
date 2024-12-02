@@ -1,6 +1,6 @@
 # ATM Banking System
 
-Greetings! This repository is intended for the final project of the ATM Banking System group of CSIT327 section G5 of the Cebu Institute of Technology-University to be submitted to Mr. Joemari Amparo.
+Greetings! This repository is intended for the final project of the ATM Banking System group of CSIT327 section G7 of the Cebu Institute of Technology-University to be submitted to Mr. Joemari Amparo.
 
 The members/contributors for this project are so named:
 
