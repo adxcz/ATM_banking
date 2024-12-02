@@ -213,6 +213,7 @@ def change_pin(request):
         # Get the current PIN input from the form and new PIN input
         current_pin = request.POST.get('current_pin')
         new_pin = request.POST.get('new_pin')
+        confirm_pin = request.POST.get('confirm_pin')
 
         # Get the current user's bank account
         account = BankAccount.objects.get(user=request.user)
@@ -226,10 +227,14 @@ def change_pin(request):
         if new_pin == account.pin:
             messages.error(request, 'The new PIN cannot be the same as the current PIN.')
             return redirect('change_pin')
-
+        if confirm_pin != new_pin:
+            messages.error(request, 'PINs do not match')
+            return render(request, 'signup.html')
         # Update the pin with the new value
         account.pin = new_pin
         account.save()
+
+        
 
         messages.success(request, 'PIN updated successfully')
         return redirect('dashboard')
