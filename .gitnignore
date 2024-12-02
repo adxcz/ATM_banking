@@ -1,0 +1,14 @@
+# Django-related exclusions
+*.pyc
+__pycache__/
+db.sqlite3
+
+# Environment variables
+.env
+
+# Virtual environment
+venv/
+env/
+
+# IDE settings
+.vscode/
