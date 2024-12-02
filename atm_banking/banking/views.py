@@ -178,15 +178,30 @@ def send_money(request):
 @login_required
 def change_pin(request):
     if request.method == 'POST':
+        # Get the current PIN input from the form and new PIN input
+        current_pin = request.POST.get('current_pin')
         new_pin = request.POST.get('new_pin')
-        
+
+        # Get the current user's bank account
         account = BankAccount.objects.get(user=request.user)
+
+        # Check if the entered current PIN is correct
+        if current_pin != account.pin:
+            messages.error(request, 'The current PIN is incorrect.')
+            return redirect('change_pin')
+
+        # Check if the new PIN is the same as the current PIN
+        if new_pin == account.pin:
+            messages.error(request, 'The new PIN cannot be the same as the current PIN.')
+            return redirect('change_pin')
+
+        # Update the pin with the new value
         account.pin = new_pin
         account.save()
-        
+
         messages.success(request, 'PIN updated successfully')
         return redirect('dashboard')
-    
+
     return render(request, 'change_pin.html')
 
 def contact(request):
