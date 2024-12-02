@@ -6,6 +6,9 @@ from django.contrib import messages
 from .models import BankAccount, Transaction, ContactMessage
 from django.db import transaction
 from decimal import Decimal
+import re
+
+import re
 
 def signup_view(request):
     if request.method == 'POST':
@@ -19,6 +22,11 @@ def signup_view(request):
         # Check if passwords match
         if password != confirm_password:
             messages.error(request, 'Passwords do not match')
+            return render(request, 'signup.html')
+
+        # Validate password complexity
+        if not re.search(r'^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$', password):
+            messages.error(request, 'Password must be at least 8 characters long and include at least one uppercase letter, one number, and one special character.')
             return render(request, 'signup.html')
 
         # Check if pins match
@@ -44,6 +52,7 @@ def signup_view(request):
         return redirect('dashboard')
     
     return render(request, 'signup.html')
+
 
 def login_view(request):
     if request.method == 'POST':
