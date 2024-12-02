@@ -4,8 +4,8 @@ Greetings! This repository is intended for the final project of the ATM Banking 
 
 The members/contributors for this project are so named:
 
-**Nap Adriel B. Derecho**
 
+**Nap Adriel B. Derecho**
 **Neil Bas**
 ---
 
