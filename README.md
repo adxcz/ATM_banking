@@ -3,8 +3,11 @@
 Greetings! This repository is intended for the final project of the ATM Banking System group of CSIT327 section G5 of the Cebu Institute of Technology-University to be submitted to Mr. Joemari Amparo.
 
 The members/contributors for this project are so named:
-Nap Adriel B. Derecho
-Neil Bas
+
+
+**Nap Adriel B. Derecho**
+
+**Neil Bas**
 ---
 
 ## Table of Contents
@@ -90,6 +93,8 @@ Folder Structure
 ├── .gitignore          # Git ignore file for version control
 └── requirements.txt    # List of dependencies for the project
 ```
+Old ERD
+![Old ERD](images/OldERD.png)
 ERD
 Relationships
 User and BankAccount: One-to-Many (A user can have multiple bank accounts).
@@ -117,7 +122,9 @@ Send Money
 Change Pin
 ![Change Pin](images/Changepin.png)
 
-(Insert images of the application's user interface, such as login screens, dashboard, and transaction views.)
+Gantt Chart:
+![Gantt Chart](images/GanttChart.png)
+
 
 Contributing
 We welcome contributions! If you want to improve the project, follow these steps:
@@ -141,8 +148,7 @@ Push your changes to your forked repository:
 git push origin feature-name
 ```
 Open a pull request to the main repository to propose your changes.
-License
-This project is licensed under the MIT License.
+
 
 ## Acknowledgements
 Django Framework: Django
