@@ -35,7 +35,6 @@ python manage.py runserver
 Access the app: Open http://127.0.0.1:8000/ in your browser.
 
 Folder Structure
-.
 ├── atm_banking         # Main Django app
 ├── static_collected    # Collected static files
 ├── web_project         # Django project settings
