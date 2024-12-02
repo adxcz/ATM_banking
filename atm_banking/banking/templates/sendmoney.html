@@ -6,6 +6,7 @@
     <h2>Send Money</h2>
     <form method="POST">
         {% csrf_token %}
+        <p>Balance: <strong>${{ account.balance }}</strong></p>
         <label for="recipient">Recipient Username:</label>
         <input type="text" name="recipient" required>
     

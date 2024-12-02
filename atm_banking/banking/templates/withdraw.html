@@ -6,6 +6,7 @@
     <h2>Withdraw Money</h2>
     <form method="POST">
         {% csrf_token %}
+        <p>Balance: <strong>${{ account.balance }}</strong></p>
         <label for="amount">Amount to Withdraw:</label>
         <input type="number" name="amount" step="0.01" required>
     

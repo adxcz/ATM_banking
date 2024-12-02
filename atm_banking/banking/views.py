@@ -78,6 +78,7 @@ def dashboard(request):
 
 @login_required
 def deposit(request):
+    account = BankAccount.objects.get(user=request.user)
     if request.method == 'POST':
         # Convert amount from float to Decimal
         amount = Decimal(request.POST.get('amount'))
@@ -98,10 +99,13 @@ def deposit(request):
         messages.success(request, f'Deposited ${amount}')
         return redirect('dashboard')
     
-    return render(request, 'deposit.html')
+    return render(request, 'deposit.html',{
+        'account': account,
+    })
 
 @login_required
 def withdraw(request):
+    account = BankAccount.objects.get(user=request.user)
     if request.method == 'POST':
         # Convert amount from float to Decimal
         amount = Decimal(request.POST.get('amount'))
@@ -134,10 +138,13 @@ def withdraw(request):
         messages.success(request, f'Successfully withdrew ${amount}.')
         return redirect('dashboard')
 
-    return render(request, 'withdraw.html')
+    return render(request, 'withdraw.html',{
+        'account': account,
+    })
 
 @login_required
 def send_money(request):
+    account = BankAccount.objects.get(user=request.user)
     if request.method == 'POST':
         recipient_username = request.POST.get('recipient')
         amount = Decimal(request.POST.get('amount'))  # Convert to Decimal
@@ -187,7 +194,9 @@ def send_money(request):
         except (User.DoesNotExist, BankAccount.DoesNotExist):
             messages.error(request, 'Recipient not found.')
 
-    return render(request, 'sendmoney.html')
+    return render(request, 'sendmoney.html',{
+        'account': account,
+    })
 
 @login_required
 def change_pin(request):
